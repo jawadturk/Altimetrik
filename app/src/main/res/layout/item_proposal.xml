@@ -1,0 +1,97 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemProposalViewModel"
+            type="com.example.altimetrik.viewmodel.ItemProposalViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:background="@android:color/white"
+        android:onClick="@{itemProposalViewModel::onItemClick}"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/padding_large"
+        android:paddingTop="@dimen/padding"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            >
+
+            <ImageView
+                android:id="@+id/imageView_thumbnail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                tools:imageUrl="@{itemProposalViewModel.thumbnailImage}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:text="@{itemProposalViewModel.title}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_medium"
+                tools:text="New rug for out class room family" />
+
+            <TextView
+                android:id="@+id/textView_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_small"
+                android:paddingRight="@dimen/padding_small"
+                android:text="@{itemProposalViewModel.shortDescription}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_xxsmall"
+                tools:text="his project services 24 kindergarten students, ages 5-6. We are a Title 1 School and the majority are from economically disadvantaged homes. The classroom is diverse; full of different..." />
+
+            <TextView
+                android:id="@+id/textView_teacherName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:paddingLeft="@dimen/padding_small"
+                android:paddingRight="@dimen/padding_small"
+                android:text="@{itemProposalViewModel.teacherName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_small"
+                android:textStyle="bold"
+                tools:text="Ms. Hovis" />
+
+            <TextView
+                android:id="@+id/textView_schoolName_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_small"
+                android:paddingRight="@dimen/padding_small"
+                android:text="@{itemProposalViewModel.schoolDetails}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_small"
+                android:textStyle="italic"
+                tools:text="Taylor Leadership Academy" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>
